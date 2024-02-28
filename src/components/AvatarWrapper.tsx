@@ -9,7 +9,7 @@ import {
 } from '@nextui-org/dropdown';
 import { Avatar } from '@nextui-org/avatar';
 import { useTransition } from 'react';
-import { login } from '@/actions/auth';
+import { logOut, login } from '@/actions/auth';
 
 export default function AvatarWrapper({ user }: { user: any }) {
   const [isLoading, startTransition] = useTransition();
@@ -46,7 +46,13 @@ export default function AvatarWrapper({ user }: { user: any }) {
           <p className="font-semibold">Signed in as</p>
           <p className="font-semibold">{user.name}</p>
         </DropdownItem>
-        <DropdownItem key="logout" color="danger">
+        <DropdownItem
+          key="logout"
+          color="danger"
+          onPress={() => {
+            logOut();
+          }}
+        >
           Log Out
         </DropdownItem>
       </DropdownMenu>
