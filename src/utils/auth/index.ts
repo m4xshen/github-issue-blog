@@ -3,14 +3,8 @@ import { cookies } from 'next/headers';
 export default async function exchangeCodeForAccessToken(code: string) {
   const cookieStore = cookies();
   const url = new URL('https://github.com/login/oauth/access_token');
-  url.searchParams.append(
-    'client_id',
-    process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
-  );
-  url.searchParams.append(
-    'client_secret',
-    process.env.NEXT_PUBLIC_GITHUB_CLIENT_SECRET,
-  );
+  url.searchParams.append('client_id', process.env.GITHUB_CLIENT_ID);
+  url.searchParams.append('client_secret', process.env.GITHUB_CLIENT_SECRET);
   url.searchParams.append('code', code);
 
   try {
