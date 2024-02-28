@@ -1,8 +1,6 @@
 'use client';
 
-import useLogin from '@/hooks/useLogin';
 import { Button } from '@nextui-org/button';
-import Link from 'next/link';
 import {
   Dropdown,
   DropdownTrigger,
@@ -10,13 +8,22 @@ import {
   DropdownItem,
 } from '@nextui-org/dropdown';
 import { Avatar } from '@nextui-org/avatar';
+import { useTransition } from 'react';
+import { login } from '@/actions/auth';
 
 export default function AvatarWrapper({ user }: { user: any }) {
-  const { url } = useLogin();
+  const [isLoading, startTransition] = useTransition();
 
   if (!user) {
     return (
-      <Button as={Link} href={url.href}>
+      <Button
+        isLoading={isLoading}
+        onPress={() => {
+          startTransition(async () => {
+            await login();
+          });
+        }}
+      >
         Login
       </Button>
     );

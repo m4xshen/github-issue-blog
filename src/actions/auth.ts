@@ -1,4 +1,9 @@
-export default function useLogin() {
+'use server';
+
+import { redirect } from 'next/navigation';
+
+/* eslint-disable import/prefer-default-export */
+export async function login() {
   const url = new URL('https://github.com/login/oauth/authorize');
   url.searchParams.append(
     'client_id',
@@ -6,7 +11,5 @@ export default function useLogin() {
   );
   url.searchParams.append('scope', 'repo');
 
-  return {
-    url,
-  };
+  redirect(url.toString());
 }
