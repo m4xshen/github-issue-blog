@@ -1,3 +1,4 @@
+import PostTitle from '@/components/PostTitle';
 import octokit from '@/utils/octokit';
 import Markdown from 'react-markdown';
 
@@ -21,12 +22,7 @@ export default async function Post({ params }: { params: { number: string } }) {
 
   return (
     <div className="mx-auto mt-20 grid w-max gap-6">
-      <div className="grid gap-2">
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-        <div className="text-sm text-gray-400">
-          {new Date(post.created_at).toDateString()}
-        </div>
-      </div>
+      <PostTitle title={post.title} createdAt={post.created_at} />
       <div className="prose prose-invert">
         <Markdown>{post.body}</Markdown>
       </div>

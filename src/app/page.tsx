@@ -1,6 +1,5 @@
+import PostTitle from '@/components/PostTitle';
 import octokit from '@/utils/octokit';
-import { Card, CardFooter, CardHeader } from '@nextui-org/card';
-import Link from 'next/link';
 
 async function getPosts() {
   const { data } = await octokit.request('GET /repos/{owner}/{repo}/issues', {
@@ -17,19 +16,15 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <div className="mx-auto mt-20 flex h-full w-max flex-col justify-center gap-5">
+    <div className="mx-auto mt-20 flex h-full w-max flex-col justify-center gap-10">
       {posts.map((post) => (
-        <Card
+        <a
           key={post.number}
-          as={Link}
           href={`post/${post.number}`}
-          className="bg-transparent"
+          aria-label="post title"
         >
-          <CardHeader className="text-2xl font-bold">{post.title}</CardHeader>
-          <CardFooter className="text-sm text-[#ffffffa0]">
-            {new Date(post.created_at).toDateString()}
-          </CardFooter>
-        </Card>
+          <PostTitle title={post.title} createdAt={post.created_at} />
+        </a>
       ))}
     </div>
   );
