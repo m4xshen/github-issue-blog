@@ -1,12 +1,8 @@
+import octokit from '@/utils/octokit';
 import { Card, CardFooter, CardHeader } from '@nextui-org/card';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { Octokit } from 'octokit';
 
 async function getPosts() {
-  const auth = cookies().get('access_token')?.value;
-  const octokit = new Octokit(auth ? { auth } : {});
-
   const { data } = await octokit.request('GET /repos/{owner}/{repo}/issues', {
     owner: process.env.OWNER,
     repo: process.env.REPO,

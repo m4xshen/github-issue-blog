@@ -1,10 +1,6 @@
-import { Octokit } from 'octokit';
-import { cookies } from 'next/headers';
+import octokit from '@/utils/octokit';
 
 async function getPost(issue_number: number) {
-  const auth = cookies().get('access_token')?.value;
-  const octokit = new Octokit(auth ? { auth } : {});
-
   const { data } = await octokit.request(
     'GET /repos/{owner}/{repo}/issues/{issue_number}',
     {
