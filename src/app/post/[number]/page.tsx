@@ -1,4 +1,5 @@
 import octokit from '@/utils/octokit';
+import Markdown from 'react-markdown';
 
 async function getPost(issue_number: number) {
   const { data } = await octokit.request(
@@ -17,6 +18,7 @@ async function getPost(issue_number: number) {
 
 export default async function Post({ params }: { params: { number: string } }) {
   const post = await getPost(parseInt(params.number, 10));
+
   return (
     <div className="mx-auto mt-20 grid w-max gap-6">
       <div className="grid gap-2">
@@ -25,7 +27,9 @@ export default async function Post({ params }: { params: { number: string } }) {
           {new Date(post.created_at).toDateString()}
         </div>
       </div>
-      <div className="prose prose-invert">{post.body}</div>
+      <div className="prose prose-invert">
+        <Markdown>{post.body}</Markdown>
+      </div>
     </div>
   );
 }
