@@ -25,9 +25,7 @@ export default async function Home() {
           href={`post/${post.number}`}
           className="bg-transparent"
         >
-          <CardHeader className="text-2xl font-semibold">
-            {post.title}
-          </CardHeader>
+          <CardHeader className="text-2xl font-bold">{post.title}</CardHeader>
           <CardFooter className="text-sm text-[#ffffffa0]">
             {new Date(post.created_at).toDateString()}
           </CardFooter>
