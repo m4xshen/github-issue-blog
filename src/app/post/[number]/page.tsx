@@ -6,8 +6,8 @@ async function getPost(issue_number: number) {
   const { data } = await octokit.request(
     'GET /repos/{owner}/{repo}/issues/{issue_number}',
     {
-      owner: process.env.OWNER,
-      repo: process.env.REPO,
+      owner: process.env.NEXT_PUBLIC_OWNER,
+      repo: process.env.NEXT_PUBLIC_REPO,
       issue_number,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28',

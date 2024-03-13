@@ -3,7 +3,7 @@ namespace NodeJS {
   interface ProcessEnv {
     GITHUB_CLIENT_ID: string;
     GITHUB_CLIENT_SECRET: string;
-    OWNER: string;
-    REPO: string;
+    NEXT_PUBLIC_OWNER: string;
+    NEXT_PUBLIC_REPO: string;
   }
 }
