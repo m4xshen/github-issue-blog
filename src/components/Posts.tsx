@@ -6,15 +6,15 @@ import { Spinner } from '@nextui-org/spinner';
 import { InView } from 'react-intersection-observer';
 
 export default function Posts() {
-  const { postsArr, error, isReachingEnd, nextPage } = usePosts();
+  const { data, error, isReachingEnd, nextPage } = usePosts();
 
-  if (!postsArr || error) {
+  if (!data || error) {
     return 'Error fetching posts. Please try again later.';
   }
 
   return (
     <>
-      {postsArr.map((posts) =>
+      {data.map((posts) =>
         posts.map((post: any) => (
           <a
             key={post.number}
