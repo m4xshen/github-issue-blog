@@ -6,11 +6,7 @@ import { Spinner } from '@nextui-org/spinner';
 import { InView } from 'react-intersection-observer';
 
 export default function Posts() {
-  const { postsArr, error, isLoading, isReachingEnd, nextPage } = usePosts();
-
-  if (isLoading) {
-    return <Spinner color="white" />;
-  }
+  const { postsArr, error, isReachingEnd, nextPage } = usePosts();
 
   if (!postsArr || error) {
     return 'Error fetching posts. Please try again later.';
