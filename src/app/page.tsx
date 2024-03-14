@@ -1,7 +1,6 @@
 import Posts from '@/components/Posts';
-import { fetcher } from '@/actions/octokit';
 import { unstable_serialize } from 'swr/infinite';
-import { getKey } from '@/hooks/usePosts';
+import { fetcher, getKey } from '@/utils/octokit';
 import { SWRProvider } from './providers';
 
 export default async function Home() {
