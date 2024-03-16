@@ -1,6 +1,6 @@
 'use client';
 
-import { deletePost } from '@/actions/octokit';
+import { deletePost } from '@/actions/post';
 import { Button } from '@nextui-org/button';
 import { useTransition } from 'react';
 

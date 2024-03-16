@@ -2,7 +2,7 @@
 
 import { Textarea } from '@nextui-org/input';
 import { Button } from '@nextui-org/button';
-import { createPost } from '@/actions/octokit';
+import { createPost } from '@/actions/post';
 import { useFormStatus } from 'react-dom';
 
 function Publish() {

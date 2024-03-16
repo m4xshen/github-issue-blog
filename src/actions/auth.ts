@@ -1,5 +1,6 @@
 'use server';
 
+import { Octokit } from 'octokit';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
@@ -16,4 +17,20 @@ export async function logOut() {
   cookieStore.delete('access_token');
 
   redirect('/');
+}
+
+export async function getUser() {
+  const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
+  const userOctokit = new Octokit({ auth: accessToken });
+  try {
+    const { data } = await userOctokit.rest.users.getAuthenticated();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }

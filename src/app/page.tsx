@@ -1,7 +1,8 @@
-import Posts from '@/components/Posts';
-import { getPosts, getUser } from '@/actions/octokit';
-import { Button } from '@nextui-org/react';
 import Link from 'next/link';
+import { Button } from '@nextui-org/react';
+import Posts from '@/components/Posts';
+import { getPosts } from '@/actions/post';
+import { getUser } from '@/actions/auth';
 
 export default async function Home() {
   const data = await getPosts(1);

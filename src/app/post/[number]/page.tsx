@@ -1,4 +1,5 @@
-import { getUser, getPost } from '@/actions/octokit';
+import { getUser } from '@/actions/auth';
+import { getPost } from '@/actions/post';
 import PostActions from '@/components/PostActions';
 import PostTitle from '@/components/PostTitle';
 import Markdown from 'react-markdown';
