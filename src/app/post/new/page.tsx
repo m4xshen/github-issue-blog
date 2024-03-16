@@ -31,7 +31,7 @@ export default function NewPost() {
 
   return (
     <form
-      className="prose prose-invert mx-auto mt-20 flex flex-col gap-6"
+      className="prose prose-invert mx-auto flex flex-col gap-6"
       action={createPost}
     >
       <Input
