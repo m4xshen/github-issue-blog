@@ -56,6 +56,32 @@ export async function getPost(issue_number: number) {
   }
 }
 
+export async function createPost(formData: FormData) {
+  const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
+  const title = formData.get('title') as string;
+  const body = formData.get('body') as string;
+
+  const userOctokit = new Octokit({ auth: accessToken });
+  try {
+    await userOctokit.request('POST /repos/{owner}/{repo}/issues', {
+      owner: process.env.NEXT_PUBLIC_OWNER,
+      repo: process.env.NEXT_PUBLIC_REPO,
+      title,
+      body,
+    });
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+
+  revalidatePath('/');
+  redirect('/');
+}
+
 export async function deletePost(issue_number: number) {
   const accessToken = cookies().get('access_token')?.value;
   if (!accessToken) {

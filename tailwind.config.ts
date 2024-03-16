@@ -20,6 +20,7 @@ const config: Config = {
               DEFAULT: '#ffffff',
               foreground: '#121212',
             },
+            focus: '#ffffff',
           },
         },
       },
