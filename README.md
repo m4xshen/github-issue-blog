@@ -1,6 +1,12 @@
-# GitHub Issues Blog
+<div align="center">
+  <h1>GitHub Issues Blog</h1>
 
-Use GitHub issues as blog.
+  Use GitHub issues as blog.
+
+  Example site: https://github-issue-blog.vercel.app
+</div>
+
+![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/2c5c53e0-c80a-45be-a9ba-899a4758bd31)
 
 ## Features
 
