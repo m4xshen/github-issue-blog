@@ -12,6 +12,7 @@
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "no-console": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "react/jsx-no-bind": "off"
   }
 }

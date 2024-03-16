@@ -66,6 +66,38 @@ export async function createPost(formData: FormData) {
   redirect('/');
 }
 
+export async function updatePost(issue_number: number, formData: FormData) {
+  const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
+  const title = formData.get('title') as string;
+  const body = formData.get('body') as string;
+
+  const userOctokit = new Octokit({ auth: accessToken });
+  try {
+    await userOctokit.request(
+      'PATCH /repos/{owner}/{repo}/issues/{issue_number}',
+      {
+        owner: process.env.NEXT_PUBLIC_OWNER,
+        repo: process.env.NEXT_PUBLIC_REPO,
+        issue_number,
+        title,
+        body,
+      },
+    );
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+
+  revalidatePath('/');
+  revalidatePath('/post/edit');
+  revalidatePath(`/post/${issue_number}`);
+  redirect(`/post/${issue_number}`);
+}
+
 export async function deletePost(issue_number: number) {
   const accessToken = cookies().get('access_token')?.value;
   if (!accessToken) {

@@ -2,6 +2,7 @@
 
 import { deletePost } from '@/actions/post';
 import { Button } from '@nextui-org/button';
+import Link from 'next/link';
 import { useTransition } from 'react';
 
 export default function PostActions({ number }: { number: number }) {
@@ -9,7 +10,13 @@ export default function PostActions({ number }: { number: number }) {
 
   return (
     <div className="flex items-center gap-5">
-      <Button radius="sm" color="primary">
+      <Button
+        as={Link}
+        radius="sm"
+        color="primary"
+        href={`/post/edit?number=${number}`}
+        className="no-underline"
+      >
         Edit
       </Button>
       <Button
