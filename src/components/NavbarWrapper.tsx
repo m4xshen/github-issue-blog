@@ -18,8 +18,8 @@ export default async function NavbarWrapper() {
       }}
     >
       <NavbarBrand>
-        <Link href="/" className="text-2xl font-bold">
-          Blog
+        <Link href="/" className="text-xl font-bold">
+          {process.env.BLOG_TITLE}
         </Link>
       </NavbarBrand>
       <NavbarContent justify="end">

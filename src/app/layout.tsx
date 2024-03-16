@@ -8,8 +8,8 @@ import { Providers } from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'GitHub Issue Blog',
-  description: 'Use GitHub issue as blog.',
+  title: process.env.BLOG_TITLE,
+  description: process.env.BLOG_DESCRIPTION,
 };
 
 export default function RootLayout({
