@@ -1,21 +1,6 @@
+import { getPost } from '@/actions/octokit';
 import PostTitle from '@/components/PostTitle';
-import octokit from '@/utils/octokit';
 import Markdown from 'react-markdown';
-
-async function getPost(issue_number: number) {
-  const { data } = await octokit.request(
-    'GET /repos/{owner}/{repo}/issues/{issue_number}',
-    {
-      owner: process.env.NEXT_PUBLIC_OWNER,
-      repo: process.env.NEXT_PUBLIC_REPO,
-      issue_number,
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    },
-  );
-  return data;
-}
 
 export default async function Post({ params }: { params: { number: string } }) {
   const post = await getPost(parseInt(params.number, 10));
