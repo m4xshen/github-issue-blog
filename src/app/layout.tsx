@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-background`}
+        className={`${inter.className} flex min-h-screen flex-col bg-background scrollbar-hide`}
       >
         <Providers>
           <NavbarWrapper />
