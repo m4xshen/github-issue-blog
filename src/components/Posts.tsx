@@ -2,6 +2,7 @@
 
 import PostTitle from '@/components/PostTitle';
 import usePosts from '@/hooks/usePosts';
+import { Link } from '@nextui-org/react';
 import { Spinner } from '@nextui-org/spinner';
 import { InView } from 'react-intersection-observer';
 
@@ -9,11 +10,11 @@ export default function Posts({ data }: { data: any[] }) {
   const { posts, noMorePosts, loadMore } = usePosts(data);
 
   return (
-    <>
+    <div className="flex flex-col gap-12">
       {posts.map((post: any) => (
-        <a key={post.id} href={`post/${post.number}`} aria-label="post title">
+        <Link key={post.id} href={`post/${post.number}`}>
           <PostTitle title={post.title} createdAt={post.created_at} />
-        </a>
+        </Link>
       ))}
       <InView
         onChange={(inView: boolean) => {
@@ -28,6 +29,6 @@ export default function Posts({ data }: { data: any[] }) {
           noMorePosts ? null : <Spinner ref={ref} color="white" />
         }
       </InView>
-    </>
+    </div>
   );
 }
