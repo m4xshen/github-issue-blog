@@ -9,6 +9,8 @@ Use GitHub issues as blog.
 - Create / Edit / Delete posts
 - SEO Friendly
 
+![lighthouse](https://github.com/m4xshen/github-issues-blog/assets/74842863/84c19d65-90f4-45e3-8100-ef81b60ad089)
+
 ## Get started
 
 1. Fork this repository
