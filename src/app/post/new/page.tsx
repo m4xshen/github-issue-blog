@@ -41,7 +41,11 @@ export default function NewPost() {
         isInvalid={titleIsInvalid}
         errorMessage={titleIsInvalid && 'Title is required.'}
         placeholder="New post title here..."
-        className="bg-transparent outline-none"
+        classNames={{
+          inputWrapper:
+            'data-[hover=true]:bg-transparent group-data-[focus=true]:bg-transparent bg-transparent outline-none p-0',
+          input: '!text-white font-bold text-3xl',
+        }}
       />
       <Textarea
         value={body}
@@ -54,6 +58,11 @@ export default function NewPost() {
         radius="sm"
         size="lg"
         placeholder="Write your content here."
+        classNames={{
+          inputWrapper:
+            'data-[hover=true]:bg-sinc group-data-[focus=true]:bg-sinc bg-zinc-800',
+          input: '!text-white',
+        }}
       />
       <Publish isInvalid={titleIsInvalid || bodyIsInvalid} />
     </form>
