@@ -9,6 +9,21 @@ const config: Config = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography'), nextui()],
+  plugins: [
+    require('@tailwindcss/typography'),
+    nextui({
+      themes: {
+        dark: {
+          colors: {
+            background: '#121212',
+            primary: {
+              DEFAULT: '#ffffff',
+              foreground: '#121212',
+            },
+          },
+        },
+      },
+    }),
+  ],
 };
 export default config;

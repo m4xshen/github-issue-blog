@@ -9,9 +9,12 @@ export default function PostActions({ number }: { number: number }) {
 
   return (
     <div className="flex items-center gap-5">
-      <Button radius="sm">Edit</Button>
+      <Button radius="sm" color="primary">
+        Edit
+      </Button>
       <Button
         radius="sm"
+        color="primary"
         isLoading={isLoading}
         onPress={() => {
           startTransition(async () => {

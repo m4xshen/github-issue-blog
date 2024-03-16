@@ -17,6 +17,8 @@ export default function AvatarWrapper({ user }: { user: any }) {
   if (!user) {
     return (
       <Button
+        radius="sm"
+        color="primary"
         isLoading={isLoading}
         onPress={() => {
           startTransition(async () => {
