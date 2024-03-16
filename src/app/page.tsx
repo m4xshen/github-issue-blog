@@ -9,7 +9,7 @@ export default async function Home() {
   const user = await getUser();
 
   return (
-    <div className="mx-auto mt-20 flex h-full w-max flex-col justify-center gap-10">
+    <div className="mx-auto flex h-full max-w-[65ch] flex-col justify-center gap-10">
       {user ? (
         <Button as={Link} href="/post/new" radius="sm" color="primary">
           New Post

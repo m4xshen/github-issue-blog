@@ -10,7 +10,7 @@ export default async function Post({ params }: { params: { number: string } }) {
   const user = await getUser();
 
   return (
-    <div className="prose prose-invert mx-auto mt-20 grid gap-6">
+    <div className="prose prose-invert mx-auto grid gap-6">
       <PostTitle title={post.title} createdAt={post.created_at} />
       {user ? <PostActions number={number} /> : null}
       <Markdown>{post.body}</Markdown>
