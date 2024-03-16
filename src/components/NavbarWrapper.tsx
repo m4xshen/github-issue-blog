@@ -1,6 +1,6 @@
 import { Navbar, NavbarBrand, NavbarContent } from '@nextui-org/navbar';
-import getUser from '@/utils/getUser';
 import Link from 'next/link';
+import { getUser } from '@/actions/octokit';
 import AvatarWrapper from './AvatarWrapper';
 
 export default async function NavbarWrapper() {
