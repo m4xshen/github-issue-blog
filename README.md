@@ -3,10 +3,11 @@
 
   Use GitHub issues as blog.
 
-  Example site: https://github-issue-blog.vercel.app
+  Example Site: https://github-issue-blog.vercel.app
 </div>
 
-![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/2c5c53e0-c80a-45be-a9ba-899a4758bd31)
+![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/33e3429b-0346-48c1-987d-5f4e4b4103f1)
+
 
 ## Features
 
