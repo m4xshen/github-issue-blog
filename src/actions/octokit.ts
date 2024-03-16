@@ -1,9 +1,10 @@
 'use server';
 
-import { cookies } from 'next/headers';
-import octokit from '@/utils/octokit';
-import { Octokit } from 'octokit';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
+import { Octokit } from 'octokit';
+import { revalidatePath } from 'next/cache';
+import octokit from '@/utils/octokit';
 
 export async function getUser() {
   const accessToken = cookies().get('access_token')?.value;
@@ -53,4 +54,30 @@ export async function getPost(issue_number: number) {
     console.error(error);
     redirect('/');
   }
+}
+
+export async function deletePost(issue_number: number) {
+  const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
+  const userOctokit = new Octokit({ auth: accessToken });
+  try {
+    await userOctokit.request(
+      'PATCH /repos/{owner}/{repo}/issues/{issue_number}',
+      {
+        owner: process.env.NEXT_PUBLIC_OWNER,
+        repo: process.env.NEXT_PUBLIC_REPO,
+        issue_number,
+        state: 'closed',
+      },
+    );
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+
+  revalidatePath('/');
+  redirect('/');
 }

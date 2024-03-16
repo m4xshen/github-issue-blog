@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function usePosts(initPosts: any[]) {
   const [posts, setPosts] = useState(initPosts);
   const [page, setPage] = useState(2);
-  const [noMorePosts, setNoMorePosts] = useState(false);
+  const [noMorePosts, setNoMorePosts] = useState(initPosts.length < 10);
 
   async function loadMore() {
     const morePosts = await getPosts(page);
