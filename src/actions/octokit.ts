@@ -6,6 +6,10 @@ import { Octokit } from 'octokit';
 
 export async function getUser() {
   const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
   const userOctokit = new Octokit({ auth: accessToken });
   try {
     const { data } = await userOctokit.rest.users.getAuthenticated();
