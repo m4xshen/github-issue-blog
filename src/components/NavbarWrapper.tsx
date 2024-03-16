@@ -1,4 +1,9 @@
-import { Navbar, NavbarBrand, NavbarContent } from '@nextui-org/navbar';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from '@nextui-org/navbar';
 import Link from 'next/link';
 import { getUser } from '@/actions/auth';
 import AvatarWrapper from './AvatarWrapper';
@@ -14,7 +19,9 @@ export default async function NavbarWrapper() {
         </Link>
       </NavbarBrand>
       <NavbarContent justify="end">
-        <AvatarWrapper user={user} />
+        <NavbarItem>
+          <AvatarWrapper user={user} />
+        </NavbarItem>
       </NavbarContent>
     </Navbar>
   );
