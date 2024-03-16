@@ -12,7 +12,11 @@ export default async function NavbarWrapper() {
   const user = await getUser();
 
   return (
-    <Navbar>
+    <Navbar
+      classNames={{
+        base: 'backdrop-blur-sm border-b border-b-stone-800',
+      }}
+    >
       <NavbarBrand>
         <Link href="/" className="text-2xl font-bold">
           Blog

@@ -17,6 +17,7 @@ export default function AvatarWrapper({ user }: { user: any }) {
   if (!user) {
     return (
       <Button
+        size="sm"
         radius="sm"
         color="primary"
         isLoading={isLoading}
