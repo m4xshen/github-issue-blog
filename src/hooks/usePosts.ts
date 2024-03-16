@@ -1,16 +1,24 @@
-import { fetcher, getKey } from '@/utils/octokit';
-import useSWRInfinite from 'swr/infinite';
+import { getPosts } from '@/actions/octokit';
+import { useState } from 'react';
 
-export default function usePosts() {
-  const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
+export default function usePosts(initPosts: any[]) {
+  const [posts, setPosts] = useState(initPosts);
+  const [page, setPage] = useState(2);
+  const [noMorePosts, setNoMorePosts] = useState(false);
 
-  const isEmpty = data?.[0]?.length === 0;
-  const isReachingEnd = isEmpty || (data && data[data.length - 1]?.length < 10);
+  async function loadMore() {
+    const morePosts = await getPosts(page);
+    setPosts([...posts, ...morePosts]);
+    setPage(page + 1);
+
+    if (morePosts.length < 10) {
+      setNoMorePosts(true);
+    }
+  }
 
   return {
-    data,
-    isReachingEnd,
-    error,
-    nextPage: () => setSize(size + 1),
+    posts,
+    noMorePosts,
+    loadMore,
   };
 }
