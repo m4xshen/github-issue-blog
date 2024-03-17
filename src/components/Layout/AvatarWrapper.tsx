@@ -10,9 +10,11 @@ import {
 import { Avatar } from '@nextui-org/avatar';
 import { useTransition } from 'react';
 import { logOut, login } from '@/actions/auth';
+import { usePathname } from 'next/navigation';
 
 export default function AvatarWrapper({ user }: { user: any }) {
   const [isLoading, startTransition] = useTransition();
+  const pathname = usePathname();
 
   if (!user) {
     return (
@@ -23,7 +25,7 @@ export default function AvatarWrapper({ user }: { user: any }) {
         isLoading={isLoading}
         onPress={() => {
           startTransition(async () => {
-            await login();
+            await login(pathname);
           });
         }}
       >
@@ -52,8 +54,8 @@ export default function AvatarWrapper({ user }: { user: any }) {
         <DropdownItem
           key="logout"
           color="danger"
-          onPress={() => {
-            logOut();
+          onPress={async () => {
+            await logOut();
           }}
         >
           Log Out

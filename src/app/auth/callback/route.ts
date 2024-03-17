@@ -5,14 +5,14 @@ import exchangeCodeForAccessToken from '@/utils/auth';
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get('code');
-  const next = searchParams.get('next') ?? '/';
+  const pathname = searchParams.get('state');
 
   if (code) {
     const { error } = await exchangeCodeForAccessToken(code);
     if (!error) {
-      return NextResponse.redirect(`${origin}${next}`);
+      return NextResponse.redirect(`${origin}${pathname}`);
     }
   }
 
-  return NextResponse.redirect(`${origin}/auth/auth-code-error`);
+  return NextResponse.redirect(origin);
 }
