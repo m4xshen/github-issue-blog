@@ -24,10 +24,12 @@ export default async function Post({ params }: { params: { number: string } }) {
   const user = await getUser();
 
   return (
-    <div className="prose prose-invert mx-auto grid gap-6">
+    <div className="mx-auto  grid max-w-[65ch] gap-6">
       <PostTitle title={post.title} createdAt={post.created_at} />
       {user ? <PostActions number={number} /> : null}
-      <Markdown>{post.body}</Markdown>
+      <div className="prose prose-invert">
+        <Markdown>{post.body}</Markdown>
+      </div>
     </div>
   );
 }
