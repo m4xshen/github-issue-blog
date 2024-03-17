@@ -33,6 +33,10 @@ export async function getPost(issue_number: number) {
       },
     );
 
+    if (data.state === 'closed') {
+      throw new Error('Post is deleted');
+    }
+
     return data;
   } catch (error) {
     console.error(error);
