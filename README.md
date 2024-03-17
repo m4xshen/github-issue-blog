@@ -11,10 +11,12 @@
 
 ## Features
 
-- Use GitHub issues as your blog content storage
+- Use GitHub issues as your blog storage
 - Infinite scroll at home page
 - Create / Edit / Delete posts
 - SEO Friendly
+- Light/Dark theme
+- RWD
 
 ![lighthouse](https://github.com/m4xshen/github-issues-blog/assets/74842863/84c19d65-90f4-45e3-8100-ef81b60ad089)
 
