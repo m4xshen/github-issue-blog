@@ -47,7 +47,11 @@ export default function AvatarWrapper({ user }: { user: any }) {
         />
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
-        <DropdownItem key="profile" className="h-14 gap-2">
+        <DropdownItem
+          key="profile"
+          className="h-14 gap-2"
+          textValue={`Signed in as ${user.name}`}
+        >
           <p className="font-semibold">Signed in as</p>
           <p className="font-semibold">{user.name}</p>
         </DropdownItem>
