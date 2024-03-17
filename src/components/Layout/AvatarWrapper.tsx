@@ -35,7 +35,7 @@ export default function AvatarWrapper({ user }: { user: any }) {
   }
 
   return (
-    <Dropdown placement="bottom-end">
+    <Dropdown radius='sm' placement="bottom-end">
       <DropdownTrigger>
         <Avatar
           isBordered
