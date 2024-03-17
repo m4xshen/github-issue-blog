@@ -8,12 +8,12 @@ export default async function EditPost({
 }: {
   searchParams: { number: string };
 }) {
-  if (!(await isAuthor())) {
-    redirect('/');
-  }
-
   const number = parseInt(searchParams.number, 10);
   const post = await getPost(number);
+
+  if (!(await isAuthor()) || !number) {
+    redirect('/');
+  }
 
   return (
     <PostEditor
