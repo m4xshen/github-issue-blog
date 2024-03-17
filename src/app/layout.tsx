@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-background scrollbar-hide`}
+        className={`${inter.className} flex min-h-screen flex-col bg-background transition-colors scrollbar-hide`}
       >
         <Providers>
           <NavbarWrapper />
