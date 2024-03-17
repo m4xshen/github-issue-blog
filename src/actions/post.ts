@@ -70,7 +70,7 @@ export async function createPost(formData: FormData) {
   }
 
   revalidatePath('/');
-  redirect(`/post/${issueNumber}`);
+  redirect(`/post/${issueNumber}?success=Post created successfully`);
 }
 
 export async function updatePost(issue_number: number, formData: FormData) {
@@ -99,7 +99,7 @@ export async function updatePost(issue_number: number, formData: FormData) {
   revalidatePath('/');
   revalidatePath('/post/edit');
   revalidatePath(`/post/${issue_number}`);
-  redirect(`/post/${issue_number}`);
+  redirect(`/post/${issue_number}?success=Post updated successfully`);
 }
 
 export async function deletePost(issue_number: number) {
@@ -122,5 +122,5 @@ export async function deletePost(issue_number: number) {
   }
 
   revalidatePath('/');
-  redirect('/');
+  redirect('/?success=Post deleted successfully');
 }

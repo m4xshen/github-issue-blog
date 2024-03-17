@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import NavbarWrapper from '@/components/Layout/NavbarWrapper';
 import Footer from '@/components/Layout/Footer';
+import ToasterWrapper from '@/components/Layout/ToasterWrapper';
 import Providers from './providers';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,6 +25,9 @@ export default function RootLayout({
         className={`${inter.className} flex min-h-screen flex-col bg-background transition-colors scrollbar-hide`}
       >
         <Providers>
+          <Suspense>
+            <ToasterWrapper />
+          </Suspense>
           <NavbarWrapper />
           <div className="px-5 py-10">{children}</div>
         </Providers>

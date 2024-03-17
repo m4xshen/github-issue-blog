@@ -4,6 +4,7 @@ import { deletePost } from '@/actions/post';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
 import { useTransition } from 'react';
+import { toast } from 'sonner';
 
 export default function PostActions({ number }: { number: number }) {
   const [isLoading, startTransition] = useTransition();
@@ -27,7 +28,7 @@ export default function PostActions({ number }: { number: number }) {
           startTransition(async () => {
             const error = await deletePost(number);
             if (error) {
-              // TODO: toast error
+              toast('Error deleting post.');
             }
           });
         }}
