@@ -7,6 +7,7 @@ import {
 import { getUser } from '@/actions/auth';
 import { Link } from '@nextui-org/link';
 import AvatarWrapper from './AvatarWrapper';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default async function NavbarWrapper() {
   const user = await getUser();
@@ -17,10 +18,13 @@ export default async function NavbarWrapper() {
         base: 'backdrop-blur-sm border-b border-b-secondary',
       }}
     >
-      <NavbarBrand>
+      <NavbarBrand className='gap-5'>
         <Link href="/" className="text-xl font-bold">
           {process.env.BLOG_TITLE}
         </Link>
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>

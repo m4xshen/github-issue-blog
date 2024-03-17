@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import NavbarWrapper from '@/components/Layout/NavbarWrapper';
 import Footer from '@/components/Layout/Footer';
-import { Providers } from './providers';
+import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-background scrollbar-hide`}
       >

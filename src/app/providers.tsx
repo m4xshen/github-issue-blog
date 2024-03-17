@@ -1,8 +1,15 @@
 'use client';
 
 import { NextUIProvider } from '@nextui-org/react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { ReactNode } from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
-export function Providers({ children }: { children: React.ReactNode }) {
-  return <NextUIProvider>{children}</NextUIProvider>;
+export default function Providers({ children }: { children: ReactNode }) {
+  return (
+    <NextUIProvider>
+      <NextThemesProvider attribute="class" defaultTheme="dark">
+        {children}
+      </NextThemesProvider>
+    </NextUIProvider>
+  );
 }
