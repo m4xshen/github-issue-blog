@@ -54,15 +54,23 @@ export async function createPost(formData: FormData) {
   const body = formData.get('body') as string;
 
   const userOctokit = new Octokit({ auth: accessToken });
+  let issueNumber = null;
+
   try {
-    await userOctokit.rest.issues.create({ owner, repo, title, body });
+    const { data } = await userOctokit.rest.issues.create({
+      owner,
+      repo,
+      title,
+      body,
+    });
+    issueNumber = data.number;
   } catch (error) {
     console.error(error);
     return error;
   }
 
   revalidatePath('/');
-  redirect('/');
+  redirect(`/post/${issueNumber}`);
 }
 
 export async function updatePost(issue_number: number, formData: FormData) {
