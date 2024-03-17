@@ -6,11 +6,14 @@ import { Octokit } from 'octokit';
 import { revalidatePath } from 'next/cache';
 import octokit from '@/utils/octokit';
 
+const owner = process.env.NEXT_PUBLIC_OWNER;
+const repo = process.env.NEXT_PUBLIC_REPO;
+
 export async function getPosts(page: number) {
   try {
-    const { data } = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-      owner: process.env.NEXT_PUBLIC_OWNER,
-      repo: process.env.NEXT_PUBLIC_REPO,
+    const { data } = await octokit.rest.issues.listForRepo({
+      owner,
+      repo,
       per_page: 10,
       page,
     });
@@ -24,14 +27,11 @@ export async function getPosts(page: number) {
 
 export async function getPost(issue_number: number) {
   try {
-    const { data } = await octokit.request(
-      'GET /repos/{owner}/{repo}/issues/{issue_number}',
-      {
-        owner: process.env.NEXT_PUBLIC_OWNER,
-        repo: process.env.NEXT_PUBLIC_REPO,
-        issue_number,
-      },
-    );
+    const { data } = await octokit.rest.issues.get({
+      owner,
+      repo,
+      issue_number,
+    });
 
     if (data.state === 'closed') {
       throw new Error('Post is deleted');
@@ -55,12 +55,7 @@ export async function createPost(formData: FormData) {
 
   const userOctokit = new Octokit({ auth: accessToken });
   try {
-    await userOctokit.request('POST /repos/{owner}/{repo}/issues', {
-      owner: process.env.NEXT_PUBLIC_OWNER,
-      repo: process.env.NEXT_PUBLIC_REPO,
-      title,
-      body,
-    });
+    await userOctokit.rest.issues.create({ owner, repo, title, body });
   } catch (error) {
     console.error(error);
     return error;
@@ -81,16 +76,13 @@ export async function updatePost(issue_number: number, formData: FormData) {
 
   const userOctokit = new Octokit({ auth: accessToken });
   try {
-    await userOctokit.request(
-      'PATCH /repos/{owner}/{repo}/issues/{issue_number}',
-      {
-        owner: process.env.NEXT_PUBLIC_OWNER,
-        repo: process.env.NEXT_PUBLIC_REPO,
-        issue_number,
-        title,
-        body,
-      },
-    );
+    await userOctokit.rest.issues.update({
+      owner,
+      repo,
+      issue_number,
+      title,
+      body,
+    });
   } catch (error) {
     console.error(error);
     return error;
@@ -110,15 +102,12 @@ export async function deletePost(issue_number: number) {
 
   const userOctokit = new Octokit({ auth: accessToken });
   try {
-    await userOctokit.request(
-      'PATCH /repos/{owner}/{repo}/issues/{issue_number}',
-      {
-        owner: process.env.NEXT_PUBLIC_OWNER,
-        repo: process.env.NEXT_PUBLIC_REPO,
-        issue_number,
-        state: 'closed',
-      },
-    );
+    await userOctokit.rest.issues.update({
+      owner,
+      repo,
+      issue_number,
+      state: 'closed',
+    });
   } catch (error) {
     console.error(error);
     return error;
