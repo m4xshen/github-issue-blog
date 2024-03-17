@@ -14,5 +14,6 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.redirect(origin);
+  return NextResponse.redirect(`${origin}${pathname}?error=access_denied`);
+  // TODO: toast error
 }

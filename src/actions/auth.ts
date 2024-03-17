@@ -33,3 +33,8 @@ export async function getUser() {
     return null;
   }
 }
+
+export async function isAuthor() {
+  const user = await getUser();
+  return user?.login === process.env.NEXT_PUBLIC_OWNER;
+}
