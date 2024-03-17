@@ -26,7 +26,9 @@ export default function Posts({ data }: { data: any[] }) {
         }}
       >
         {({ ref }) =>
-          noMorePosts ? null : <Spinner ref={ref} color="white" role="status" />
+          noMorePosts ? null : (
+            <Spinner ref={ref} color="primary" role="status" />
+          )
         }
       </InView>
     </div>

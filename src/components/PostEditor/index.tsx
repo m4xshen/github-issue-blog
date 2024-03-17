@@ -36,7 +36,7 @@ export default function PostEditor({
         classNames={{
           inputWrapper:
             'data-[hover=true]:bg-transparent group-data-[focus=true]:bg-transparent bg-transparent outline-none p-0',
-          input: '!text-white font-bold text-3xl',
+          input: '!text-primary font-bold text-3xl',
         }}
       />
       <Textarea
@@ -52,8 +52,8 @@ export default function PostEditor({
         placeholder="Write your content here."
         classNames={{
           inputWrapper:
-            'data-[hover=true]:bg-sinc group-data-[focus=true]:bg-sinc bg-zinc-800',
-          input: '!text-white',
+            'border border-secondary data-[hover=true]:bg-background group-data-[focus=true]:bg-background bg-background',
+          input: '!text-primary',
         }}
       />
       <Submit

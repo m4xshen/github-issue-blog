@@ -14,7 +14,7 @@ export default async function NavbarWrapper() {
   return (
     <Navbar
       classNames={{
-        base: 'backdrop-blur-sm border-b border-b-stone-800',
+        base: 'backdrop-blur-sm border-b border-b-secondary',
       }}
     >
       <NavbarBrand>

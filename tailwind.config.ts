@@ -13,12 +13,30 @@ const config: Config = {
     require('@tailwindcss/typography'),
     nextui({
       themes: {
+        light: {
+          colors: {
+            background: '#ffffff',
+            primary: {
+              DEFAULT: '#171717',
+              500: '#171717a0',
+              foreground: '#ffffff',
+            },
+            secondary: {
+              DEFAULT: '#17171730',
+            },
+            focus: '#171717',
+          },
+        },
         dark: {
           colors: {
-            background: '#121212',
+            background: '#171717',
             primary: {
               DEFAULT: '#ffffff',
-              foreground: '#121212',
+              500: '#ffffffa0',
+              foreground: '#171717',
+            },
+            secondary: {
+              DEFAULT: '#ffffff30',
             },
             focus: '#ffffff',
           },

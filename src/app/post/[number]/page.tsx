@@ -26,7 +26,7 @@ export default async function Post({ params }: { params: { number: string } }) {
     <div className="mx-auto  grid max-w-[65ch] gap-6">
       <PostTitle title={post.title} createdAt={post.created_at} />
       {(await isAuthor()) ? <PostActions number={number} /> : null}
-      <div className="prose prose-invert">
+      <div className="prose dark:prose-invert">
         <Markdown>{post.body}</Markdown>
       </div>
     </div>
