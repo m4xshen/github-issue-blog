@@ -18,13 +18,11 @@ export default async function NavbarWrapper() {
         base: 'backdrop-blur-sm border-b border-b-secondary',
       }}
     >
-      <NavbarBrand className='gap-5'>
+      <NavbarBrand className="gap-5">
         <Link href="/" className="text-xl font-bold">
           {process.env.BLOG_TITLE}
         </Link>
-        <NavbarItem>
-          <ThemeSwitcher />
-        </NavbarItem>
+        <ThemeSwitcher />
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
