@@ -1,4 +1,4 @@
-import { getPosts } from '@/actions/post';
+import { getPosts } from '@/utils/post';
 import { useState } from 'react';
 
 export default function usePosts(initPosts: any[]) {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@nextui-org/react';
 import Posts from '@/components/Posts';
-import { getPosts } from '@/actions/post';
+import { getPosts } from '@/utils/post';
 import { isAuthor } from '@/actions/auth';
 
 export default async function Home() {
@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className="mx-auto flex h-full max-w-[65ch] flex-col justify-center gap-10">
-      {await isAuthor() ? (
+      {(await isAuthor()) ? (
         <Button as={Link} href="/post/new" radius="sm" color="primary">
           New Post
         </Button>

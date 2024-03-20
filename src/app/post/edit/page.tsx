@@ -1,7 +1,8 @@
 import { isAuthor } from '@/actions/auth';
 import { redirect } from 'next/navigation';
-import { getPost, updatePost } from '@/actions/post';
+import { updatePost } from '@/actions/post';
 import PostEditor from '@/components/PostEditor/index';
+import { getPost } from '@/utils/post';
 
 export default async function EditPost({
   searchParams,

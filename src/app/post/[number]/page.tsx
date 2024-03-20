@@ -1,7 +1,7 @@
 import { isAuthor } from '@/actions/auth';
-import { getPost } from '@/actions/post';
 import PostActions from '@/components/PostActions';
 import PostTitle from '@/components/PostTitle';
+import { getPost } from '@/utils/post';
 import { Metadata } from 'next';
 import Markdown from 'react-markdown';
 
