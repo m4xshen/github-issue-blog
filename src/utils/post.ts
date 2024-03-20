@@ -38,3 +38,18 @@ export async function getPost(issue_number: number) {
     redirect('/');
   }
 }
+
+export async function getComments(issue_number: number) {
+  try {
+    const { data } = await octokit.rest.issues.listComments({
+      owner,
+      repo,
+      issue_number,
+    });
+
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}

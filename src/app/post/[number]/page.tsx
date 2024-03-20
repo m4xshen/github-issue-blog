@@ -1,4 +1,5 @@
 import { isAuthor } from '@/actions/auth';
+import Comments from '@/components/Comments';
 import PostActions from '@/components/PostActions';
 import PostTitle from '@/components/PostTitle';
 import { getPost } from '@/utils/post';
@@ -28,6 +29,7 @@ export default async function Post({ params }: { params: { number: string } }) {
       {(await isAuthor()) ? <PostActions number={number} /> : null}
       <div className="prose dark:prose-invert">
         <Markdown>{post.body}</Markdown>
+        <Comments number={number} />
       </div>
     </div>
   );
