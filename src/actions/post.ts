@@ -60,6 +60,7 @@ export async function updatePost(issue_number: number, formData: FormData) {
   }
 
   revalidatePath('/post/edit');
+  revalidatePath(`/post/${issue_number}`);
   redirect(`/post/${issue_number}?success=Post updated successfully`);
 }
 

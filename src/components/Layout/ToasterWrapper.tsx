@@ -1,13 +1,15 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { Toaster, toast } from 'sonner';
 
 export default function ToasterWrapper() {
   const { theme } = useTheme();
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const error = searchParams.get('error');
@@ -15,8 +17,10 @@ export default function ToasterWrapper() {
 
     if (error) {
       toast.error(error);
+      router.replace(pathname);
     } else if (success) {
       toast.success(success);
+      router.replace(pathname);
     }
   }, [searchParams]);
 
