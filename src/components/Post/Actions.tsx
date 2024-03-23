@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { useTransition } from 'react';
 import { toast } from 'sonner';
 
-export default function PostActions({ number }: { number: number }) {
+export default function Actions({ number }: { number: number }) {
   const [isLoading, startTransition] = useTransition();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

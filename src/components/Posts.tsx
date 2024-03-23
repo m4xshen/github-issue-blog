@@ -1,6 +1,6 @@
 'use client';
 
-import PostTitle from '@/components/PostTitle';
+import Title from '@/components/Post/Title';
 import usePosts from '@/hooks/usePosts';
 import { Link } from '@nextui-org/react';
 import { Spinner } from '@nextui-org/spinner';
@@ -13,7 +13,7 @@ export default function Posts({ data }: { data: any[] }) {
     <div className="flex flex-col gap-12">
       {posts.map((post: any) => (
         <Link key={post.id} href={`post/${post.number}`}>
-          <PostTitle title={post.title} createdAt={post.created_at} />
+          <Title title={post.title} createdAt={post.created_at} />
         </Link>
       ))}
       <InView

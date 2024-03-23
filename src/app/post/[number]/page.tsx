@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { isAuthor } from '@/utils/auth';
-import Comments from '@/components/Comments';
-import PostActions from '@/components/PostActions';
-import PostTitle from '@/components/PostTitle';
+import Comments from '@/components/Post/Comments';
+import Actions from '@/components/Post/Actions';
+import Title from '@/components/Post/Title';
 import { getPost } from '@/utils/post';
 import { Metadata } from 'next';
 import Markdown from 'react-markdown';
@@ -28,8 +28,8 @@ export default async function Post({ params }: { params: { number: string } }) {
 
   return (
     <div className="mx-auto  grid max-w-[65ch] gap-6">
-      <PostTitle title={post.title} createdAt={post.created_at} />
-      {(await isAuthor()) ? <PostActions number={number} /> : null}
+      <Title title={post.title} createdAt={post.created_at} />
+      {(await isAuthor()) ? <Actions number={number} /> : null}
       <div className="prose dark:prose-invert prose-pre:bg-[#282c34]">
         <Markdown
           components={{

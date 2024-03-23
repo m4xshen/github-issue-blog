@@ -1,4 +1,4 @@
-export default function PostTitle({
+export default function Title({
   title,
   createdAt,
 }: {
