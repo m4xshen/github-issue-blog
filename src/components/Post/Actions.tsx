@@ -24,7 +24,7 @@ export default function Actions({ number }: { number: number }) {
         as={Link}
         radius="sm"
         color="primary"
-        href={`/post/edit?number=${number}`}
+        href={`/post/edit/${number}`}
         className="no-underline"
       >
         Edit
