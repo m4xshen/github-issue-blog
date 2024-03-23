@@ -1,13 +1,12 @@
 <div align="center">
-  <h1>GitHub Issues Blog</h1>
+  <h1>GitHub Issue Blog</h1>
 
-  Use GitHub issues as blog.
+  Use GitHub issue as your blog.
 
   Example Site: https://github-issue-blog.vercel.app
 </div>
 
-![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/33e3429b-0346-48c1-987d-5f4e4b4103f1)
-
+![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/c31a00fc-1878-4a9f-b25a-096c96fe5aa6)
 
 ## Features
 
@@ -15,8 +14,10 @@
 - Infinite scroll at home page
 - Create / Edit / Delete posts
 - SEO Friendly
-- Light/Dark theme
+- Light / Dark theme
 - RWD
+- Comment Section
+- Syntax Highlighting
 
 ![lighthouse](https://github.com/m4xshen/github-issues-blog/assets/74842863/84c19d65-90f4-45e3-8100-ef81b60ad089)
 
