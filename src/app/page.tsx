@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@nextui-org/react';
 import Posts from '@/components/Posts';
 import { getPosts } from '@/utils/post';
-import { isAuthor } from '@/actions/auth';
+import { isAuthor } from '@/utils/auth';
 
 export default async function Home() {
   const data = await getPosts(1);

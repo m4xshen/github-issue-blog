@@ -1,4 +1,4 @@
-import { isAuthor } from '@/actions/auth';
+import { isAuthor } from '@/utils/auth';
 import { createPost } from '@/actions/post';
 import PostEditor from '@/components/PostEditor/index';
 import { redirect } from 'next/navigation';

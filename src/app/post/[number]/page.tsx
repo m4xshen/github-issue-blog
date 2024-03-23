@@ -1,4 +1,4 @@
-import { isAuthor } from '@/actions/auth';
+import { isAuthor } from '@/utils/auth';
 import Comments from '@/components/Comments';
 import PostActions from '@/components/PostActions';
 import PostTitle from '@/components/PostTitle';

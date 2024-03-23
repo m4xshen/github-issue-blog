@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
+import { Octokit } from 'octokit';
 
-export default async function exchangeCodeForAccessToken(code: string) {
+export async function exchangeCodeForAccessToken(code: string) {
   const cookieStore = cookies();
   const url = new URL('https://github.com/login/oauth/access_token');
   url.searchParams.append('client_id', process.env.GITHUB_CLIENT_ID);
@@ -27,4 +28,25 @@ export default async function exchangeCodeForAccessToken(code: string) {
     return { error };
   }
   return { error: null };
+}
+
+export async function getUser() {
+  const accessToken = cookies().get('access_token')?.value;
+  if (!accessToken) {
+    return null;
+  }
+
+  const userOctokit = new Octokit({ auth: accessToken });
+  try {
+    const { data } = await userOctokit.rest.users.getAuthenticated();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+export async function isAuthor() {
+  const user = await getUser();
+  return user?.login === process.env.NEXT_PUBLIC_OWNER;
 }
