@@ -11,8 +11,9 @@ import {
   DropdownItem,
 } from '@nextui-org/dropdown';
 import { logOut, login } from '@/actions/auth';
+import { User } from '@/types';
 
-export default function AvatarWrapper({ user }: { user: any }) {
+export default function AvatarWrapper({ user }: { user: User | null }) {
   const [isLoading, startTransition] = useTransition();
   const pathname = usePathname();
 
@@ -35,13 +36,13 @@ export default function AvatarWrapper({ user }: { user: any }) {
   }
 
   return (
-    <Dropdown radius='sm' placement="bottom-end">
+    <Dropdown radius="sm" placement="bottom-end">
       <DropdownTrigger>
         <Avatar
           isBordered
           as="button"
           className="transition-transform"
-          name={user.name}
+          name={user.name ?? undefined}
           size="sm"
           src={user.avatar_url}
         />
