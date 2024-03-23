@@ -1,5 +1,5 @@
-import { getComments } from '@/utils/post';
 import { Avatar, Link } from '@nextui-org/react';
+import { getComments } from '@/utils/post';
 
 export default async function Comments({ number }: { number: number }) {
   const comments = await getComments(number);

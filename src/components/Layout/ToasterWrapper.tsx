@@ -1,8 +1,8 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useTheme } from 'next-themes';
 import { Toaster, toast } from 'sonner';
 
 export default function ToasterWrapper() {

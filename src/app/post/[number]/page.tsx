@@ -1,13 +1,12 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import { isAuthor } from '@/utils/auth';
-import Comments from '@/components/Post/Comments';
-import Actions from '@/components/Post/Actions';
-import Title from '@/components/Post/Title';
-import { getPost } from '@/utils/post';
 import { Metadata } from 'next';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Comments from '@/components/Post/Comments';
+import Actions from '@/components/Post/Actions';
+import Title from '@/components/Post/Title';
+import { getPost } from '@/utils/post';
+import { isAuthor } from '@/utils/auth';
 
 export async function generateMetadata({
   params,

@@ -1,7 +1,7 @@
 'use client';
 
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { Skeleton } from '@nextui-org/react';
 import { Moon, Sun } from '../Icons';
 

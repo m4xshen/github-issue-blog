@@ -1,5 +1,8 @@
 'use client';
 
+import { useTransition } from 'react';
+import { usePathname } from 'next/navigation';
+import { Avatar } from '@nextui-org/avatar';
 import { Button } from '@nextui-org/button';
 import {
   Dropdown,
@@ -7,10 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from '@nextui-org/dropdown';
-import { Avatar } from '@nextui-org/avatar';
-import { useTransition } from 'react';
 import { logOut, login } from '@/actions/auth';
-import { usePathname } from 'next/navigation';
 
 export default function AvatarWrapper({ user }: { user: any }) {
   const [isLoading, startTransition] = useTransition();

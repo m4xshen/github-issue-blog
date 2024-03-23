@@ -1,10 +1,10 @@
 'use client';
 
+import { InView } from 'react-intersection-observer';
+import { Link } from '@nextui-org/link';
+import { Spinner } from '@nextui-org/spinner';
 import Title from '@/components/Post/Title';
 import usePosts from '@/hooks/usePosts';
-import { Link } from '@nextui-org/react';
-import { Spinner } from '@nextui-org/spinner';
-import { InView } from 'react-intersection-observer';
 
 export default function Posts({ data }: { data: any[] }) {
   const { posts, noMorePosts, loadMore } = usePosts(data);

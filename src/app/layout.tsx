@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import ToasterWrapper from '@/components/Layout/ToasterWrapper';
 import NavbarWrapper from '@/components/Layout/NavbarWrapper';
 import Footer from '@/components/Layout/Footer';
-import ToasterWrapper from '@/components/Layout/ToasterWrapper';
 import Providers from './providers';
 import './globals.css';
 

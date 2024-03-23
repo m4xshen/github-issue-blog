@@ -1,5 +1,5 @@
-import { getPosts } from '@/utils/post';
 import { useState } from 'react';
+import { getPosts } from '@/utils/post';
 
 export default function usePosts(initPosts: any[]) {
   const [posts, setPosts] = useState(initPosts);

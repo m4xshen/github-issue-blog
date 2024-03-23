@@ -1,6 +1,7 @@
 'use client';
 
-import { deletePost } from '@/actions/post';
+import { useTransition } from 'react';
+import Link from 'next/link';
 import { Button } from '@nextui-org/button';
 import {
   Modal,
@@ -10,9 +11,8 @@ import {
   ModalHeader,
   useDisclosure,
 } from '@nextui-org/modal';
-import Link from 'next/link';
-import { useTransition } from 'react';
 import { toast } from 'sonner';
+import { deletePost } from '@/actions/post';
 
 export default function Actions({ number }: { number: number }) {
   const [isLoading, startTransition] = useTransition();

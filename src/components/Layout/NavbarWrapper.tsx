@@ -1,3 +1,4 @@
+import { Link } from '@nextui-org/link';
 import {
   Navbar,
   NavbarBrand,
@@ -5,7 +6,6 @@ import {
   NavbarItem,
 } from '@nextui-org/navbar';
 import { getUser } from '@/utils/auth';
-import { Link } from '@nextui-org/link';
 import AvatarWrapper from './AvatarWrapper';
 import ThemeSwitcher from './ThemeSwitcher';
 
