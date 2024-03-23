@@ -41,19 +41,19 @@ NEXT_PUBLIC_REPO="name of your forked repository"
 ```
 
 If you plan to host your site...
-- locally: copy above content to `.env.local`
 - with Vercel: [add environment variables in settings](https://vercel.com/docs/projects/environment-variables)
+- by yourself: copy above content to `.env.local`
 
 Make sure you change the value inside `""`.
 
-4. Deploy the site and you can now sign in to your blog to start blogging!
+4. Deploy the site and login to start blogging!
 
 ## Architecture
 
 ### Tech Stacks
 
 - Web Framework: Next.js (App Router)
-- Language: Typescript
+- Language: TypeScript
 - Styling: Tailwind CSS
 - UI: Next UI
 
@@ -62,7 +62,7 @@ Make sure you change the value inside `""`.
 - Home Page: `/`
 - Post Page: `/post/{number}`
 - New Post Page: `/post/new`
-- Edit Post Page: `/post/edit?number={number}`
+- Edit Post Page: `/post/edit/{number}`
 
 ```mermaid
 sequenceDiagram
@@ -79,16 +79,15 @@ sequenceDiagram
 - `app/`
   - `page.tsx`: Home Page
   - `[number]/page.tsx`: Post Page
-  - `edit/page.tsx`: Edit Post Page
+  - `edit/[number]/page.tsx`: Edit Post Page
   - `new/page.tsx`: New Post Page
   - `auth/callback/route.ts`: route handler for GitHub OAuth flow
 - `utils/`
   - `post.ts`: fetch posts / post / comments
-  - `auth.ts`: get user, OAuth utils
+  - `auth.ts`: fetch user, OAuth utils
   - `octokit.ts`: GitHub OAuth App client
 - `actions/`: server actions
   - `post.ts`: create / update / delete post
   - `auth.ts`: login,  log out
-- `hooks/`
-  - `usePosts.ts`: infinite scroll logic
+- `hooks/usePosts.ts`: get posts with infinite scroll
 - `components/`: UI components
