@@ -40,23 +40,25 @@ NEXT_PUBLIC_OWNER="your github username"
 NEXT_PUBLIC_REPO="name of your forked repository"
 ```
 
-If you plan to host your site...
+If you plan to deploy your site...
 - with Vercel: [add environment variables in settings](https://vercel.com/docs/projects/environment-variables)
 - by yourself: copy above content to `.env.local`
 
 Make sure you change the value inside `""`.
 
 4. Deploy the site and login to start blogging!
+- with Vercel: [follow the docs](https://vercel.com/docs/deployments/overview)
+- by yourself: `yarn run build && yarn run start` and check out http://localhost:3000
 
 ## Architecture
 
 ### Tech Stacks
 
-- Web Framework: Next.js (App Router)
-- Language: TypeScript
-- Styling: Tailwind CSS
-- UI: Next UI
-
+- Web Framework: [Next.js](https://nextjs.org/) (App Router)
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- Styling: [Tailwind CSS](https://tailwindcss.com/)
+- UI: [Next UI](https://nextui.org/)
+  
 ### Routes
 
 - Home Page: `/`
@@ -88,6 +90,7 @@ sequenceDiagram
   - `octokit.ts`: GitHub OAuth App client
 - `actions/`: server actions
   - `post.ts`: create / update / delete post
-  - `auth.ts`: login,  log out
+  - `auth.ts`: login, log out
+  - `comment.ts`: create comment
 - `hooks/usePosts.ts`: get posts with infinite scroll
 - `components/`: UI components
