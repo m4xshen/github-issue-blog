@@ -12,6 +12,7 @@ import {
 } from '@nextui-org/dropdown';
 import { logOut, login } from '@/actions/auth';
 import { User } from '@/types';
+import { GitHub } from '../Icons';
 
 export default function AvatarWrapper({ user }: { user: User | null }) {
   const [isLoading, startTransition] = useTransition();
@@ -24,12 +25,14 @@ export default function AvatarWrapper({ user }: { user: User | null }) {
         radius="sm"
         color="primary"
         isLoading={isLoading}
+        className="flex items-center"
         onPress={() => {
           startTransition(async () => {
             await login(pathname);
           });
         }}
       >
+        {isLoading ? null : <GitHub />}
         Login
       </Button>
     );
