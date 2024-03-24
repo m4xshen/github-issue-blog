@@ -24,7 +24,7 @@ export default async function Post({ params }: { params: { number: string } }) {
   const post = await getPost(number);
 
   return (
-    <div className="mx-auto  grid max-w-[65ch] gap-6">
+    <div className="mx-auto grid max-w-[65ch] gap-6">
       <Title title={post.title} createdAt={post.created_at} />
       {(await isAuthor()) ? <Actions number={number} /> : null}
       <div className="prose dark:prose-invert prose-pre:bg-[#282c34]">
