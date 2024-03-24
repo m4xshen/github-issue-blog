@@ -1,10 +1,8 @@
 import { Metadata } from 'next';
-import Markdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import Comments from '@/components/Post/Comments';
+import CommentsSection from '@/components/Post/CommentsSection';
 import Actions from '@/components/Post/Actions';
 import Title from '@/components/Post/Title';
+import MarkdownWrapper from '@/components/Post/MarkdownWrapper';
 import { getPost } from '@/utils/post';
 import { isAuthor } from '@/utils/auth';
 
@@ -30,28 +28,9 @@ export default async function Post({ params }: { params: { number: string } }) {
       <Title title={post.title} createdAt={post.created_at} />
       {(await isAuthor()) ? <Actions number={number} /> : null}
       <div className="prose dark:prose-invert prose-pre:bg-[#282c34]">
-        <Markdown
-          components={{
-            code(props) {
-              const { children, className } = props;
-              const match = /language-(\w+)/.exec(className || '');
-              return match ? (
-                <SyntaxHighlighter
-                  PreTag="div"
-                  language={match[1]}
-                  style={oneDark}
-                >
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className}>{children}</code>
-              );
-            },
-          }}
-        >
-          {post.body}
-        </Markdown>
-        <Comments number={number} />
+        <MarkdownWrapper>{post.body}</MarkdownWrapper>
+        <hr />
+        <CommentsSection number={number} />
       </div>
     </div>
   );

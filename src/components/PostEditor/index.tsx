@@ -56,10 +56,7 @@ export default function PostEditor({
           input: '!text-primary',
         }}
       />
-      <Submit
-        isInvalid={titleIsInvalid || bodyIsInvalid}
-        actionName={actionName}
-      />
+      <Submit isInvalid={titleIsInvalid || bodyIsInvalid}>{actionName}</Submit>
     </form>
   );
 }

@@ -1,12 +1,13 @@
 import { useFormStatus } from 'react-dom';
 import { Button } from '@nextui-org/button';
+import { ReactNode } from 'react';
 
 export default function Submit({
+  children,
   isInvalid,
-  actionName,
 }: {
+  children: ReactNode;
   isInvalid: boolean;
-  actionName: string;
 }) {
   const { pending } = useFormStatus();
   return (
@@ -18,7 +19,7 @@ export default function Submit({
       isDisabled={isInvalid}
       isLoading={pending}
     >
-      {actionName}
+      {children}
     </Button>
   );
 }
