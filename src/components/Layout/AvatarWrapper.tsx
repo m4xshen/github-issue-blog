@@ -25,7 +25,7 @@ export default function AvatarWrapper({ user }: { user: User | null }) {
         radius="sm"
         color="primary"
         isLoading={isLoading}
-        className="flex items-center"
+        className="flex items-center fill-background"
         onPress={() => {
           startTransition(async () => {
             await login(pathname);
