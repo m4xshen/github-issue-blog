@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "playwright test"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
@@ -22,6 +23,7 @@
     "sonner": "^1.4.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
