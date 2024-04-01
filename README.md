@@ -4,9 +4,14 @@
   Use GitHub issue as your blog.
 
   Example Site: https://github-issue-blog.vercel.app
-</div>
 
 ![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/c31a00fc-1878-4a9f-b25a-096c96fe5aa6)
+
+[![Playwright Tests](https://github.com/m4xshen/github-issue-blog/actions/workflows/playwright.yml/badge.svg)](https://github.com/m4xshen/github-issue-blog/actions/workflows/playwright.yml)
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=github-issue-blog)
+
+</div>
+
 
 ## ✨ Features
 
