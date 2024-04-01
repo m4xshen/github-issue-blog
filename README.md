@@ -8,7 +8,7 @@
 
 ![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/c31a00fc-1878-4a9f-b25a-096c96fe5aa6)
 
-## Features
+## ✨ Features
 
 - Use GitHub issues as your blog storage
 - Infinite scroll at home page
@@ -21,14 +21,13 @@
 
 ![lighthouse](https://github.com/m4xshen/github-issues-blog/assets/74842863/84c19d65-90f4-45e3-8100-ef81b60ad089)
 
-## Get started
+## 🚀 Get started
 
 1. Fork this repository
 2. [Create a GitHub OAuth app](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app) with the callback URL: `your-site-domain/auth/callback`
 
 > [!NOTE]
-> The OAuth app supports up to [15,000 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-oauth-apps), significantly surpassing the [60 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-unauthenticated-users) limit for unauthenticated requests. This increased capacity enables a higher volume of page views for your site.
-3. Customize the blog with following environment variables:
+> The OAuth app supports up to [15,000 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-oauth-apps), significantly surpassing the [60 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-unauthenticated-users) limit for unauthenticated requests. This increased capacity enables a higher volume of page views for your site. 3. Customize the blog with following environment variables:
 
 ```
 GITHUB_CLIENT_ID="your oauth app client id"
@@ -41,16 +40,18 @@ NEXT_PUBLIC_REPO="name of your forked repository"
 ```
 
 If you plan to deploy your site...
+
 - with Vercel: [add environment variables in settings](https://vercel.com/docs/projects/environment-variables)
 - by yourself: copy above content to `.env.local`
 
 Make sure you change the value inside `""`.
 
 4. Deploy the site and login to start blogging!
+
 - with Vercel: [follow the docs](https://vercel.com/docs/deployments/overview)
 - by yourself: `yarn run build && yarn run start` and check out http://localhost:3000
 
-## Architecture
+## 🏗️ Architecture
 
 ### Tech Stacks
 
@@ -58,7 +59,7 @@ Make sure you change the value inside `""`.
 - Language: [TypeScript](https://www.typescriptlang.org/)
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
 - UI: [Next UI](https://nextui.org/)
-  
+
 ### Routes
 
 - Home Page: `/`
@@ -94,3 +95,4 @@ sequenceDiagram
   - `comment.ts`: create comment
 - `hooks/usePosts.ts`: get posts with infinite scroll
 - `components/`: UI components
+- `tests/`: Playwright tests
