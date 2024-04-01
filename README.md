@@ -34,7 +34,7 @@
 > [!NOTE]
 > The OAuth app supports up to [15,000 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-oauth-apps), significantly surpassing the [60 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-unauthenticated-users) limit for unauthenticated requests. This increased capacity enables a higher volume of page views for your site.
 
-3. Customize the blog with environment variables, here's an example:
+3. You can customize the blog with environment variables. Here's an example:
 
 ```
 GITHUB_CLIENT_ID="00000000000000000000"
