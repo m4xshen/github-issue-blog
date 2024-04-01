@@ -34,24 +34,22 @@
 > [!NOTE]
 > The OAuth app supports up to [15,000 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-oauth-apps), significantly surpassing the [60 requests per hour](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#primary-rate-limit-for-unauthenticated-users) limit for unauthenticated requests. This increased capacity enables a higher volume of page views for your site.
 
-3. Customize the blog with following environment variables:
+3. Customize the blog with environment variables, here's an example:
 
 ```
-GITHUB_CLIENT_ID="your oauth app client id"
-GITHUB_CLIENT_SECRET="your oauth app client secret"
-AUTHOR_NAME="your name"
-BLOG_TITLE="title of your blog"
-BLOG_DESCRIPTION="description of your blog"
-NEXT_PUBLIC_OWNER="your github username"
-NEXT_PUBLIC_REPO="name of your forked repository"
+GITHUB_CLIENT_ID="00000000000000000000"
+GITHUB_CLIENT_SECRET="0000000000000000000000000000000000000000"
+AUTHOR_NAME="Daniel"
+BLOG_TITLE="Daniel's Blog"
+BLOG_DESCRIPTION="Hi, I'm Daniel, a software engineer from Taiwan. Welcome to my blog!"
+NEXT_PUBLIC_OWNER="m4xshen" (your GitHub username)
+NEXT_PUBLIC_REPO="example-blog" (the GitHub repository name that you want to store posts in)
 ```
 
 If you plan to deploy your site...
 
 - with Vercel: [add environment variables in settings](https://vercel.com/docs/projects/environment-variables)
 - by yourself: copy above content to `.env.local`
-
-Make sure you change the value inside `""`.
 
 4. Deploy the site and login to start blogging!
 
