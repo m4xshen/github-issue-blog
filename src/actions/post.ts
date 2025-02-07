@@ -26,6 +26,7 @@ export async function createPost(formData: FormData) {
       repo,
       title,
       body,
+      labels: ['blog'],
     });
     issueNumber = data.number;
   } catch (error) {

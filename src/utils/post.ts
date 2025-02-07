@@ -11,6 +11,7 @@ export async function getPosts(page: number) {
       repo,
       per_page: 10,
       page,
+      labels: 'blog',
     });
 
     return data;
