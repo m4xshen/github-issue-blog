@@ -1,9 +1,7 @@
-import { OAuthApp } from 'octokit';
+import { Octokit } from 'octokit';
 
-const { octokit } = new OAuthApp({
-  clientType: 'oauth-app',
-  clientId: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
 });
 
 export default octokit;
