@@ -10,6 +10,7 @@ export default async function MarkdownWrapper({
   return (
     <Markdown
       components={{
+        // eslint-disable-next-line react/no-unstable-nested-components
         code(props) {
           const { children: c, className } = props;
           const match = /language-(\w+)/.exec(className || '');
