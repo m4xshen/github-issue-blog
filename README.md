@@ -17,14 +17,14 @@
 
 ## ✨ Features
 
-- Use GitHub issues as your blog storage
-- Infinite scroll at home page
-- Create / Edit / Delete posts
-- SEO Friendly
-- Light / Dark theme
-- RWD
-- Comment Section
-- Syntax Highlighting
+- 🐱 Use GitHub issues as your blog storage
+- 💬 Comment Section
+- 📝 Create / Edit / Delete posts
+- 🌓 Light / Dark theme
+- 📱 RWD
+- 🧑‍💻 Syntax Highlighting
+- ♾️ Infinite scroll at home page
+- 🔍 SEO Friendly
 
 ![lighthouse](https://github.com/m4xshen/github-issues-blog/assets/74842863/84c19d65-90f4-45e3-8100-ef81b60ad089)
 
