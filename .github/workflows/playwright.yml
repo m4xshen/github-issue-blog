@@ -10,15 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
     - name: Install dependencies
-      run: npm install -g yarn && yarn
+      run: pnpm i
+
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: pnpm exec playwright install
+
     - name: Run Playwright tests
-      run: yarn playwright test
+      run: pnpm test
+
     - uses: actions/upload-artifact@v4
       if: always()
       with:
