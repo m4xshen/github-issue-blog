@@ -54,13 +54,4 @@ If you plan to deploy your site...
 5. Deploy the site and login to start blogging!
 
 - with Vercel: [follow the docs](https://vercel.com/docs/deployments/overview)
-- by yourself: `yarn run build && yarn run start` and check out http://localhost:3000
-
-## 🏗️ Architecture
-
-### Tech Stacks
-
-- Framework: [Next.js](https://nextjs.org/)
-- Language: [TypeScript](https://www.typescriptlang.org/)
-- Styling: [Tailwind CSS](https://tailwindcss.com/)
-- UI: [HeroUI](https://www.heroui.com/)
+- by yourself: `pnpm build && pnpm start` and check out http://localhost:3000
