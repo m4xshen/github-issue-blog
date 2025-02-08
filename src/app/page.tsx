@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 import Posts from '@/components/Posts';
 import { getPosts } from '@/utils/post';
 import { isAuthor } from '@/utils/auth';

@@ -1,8 +1,8 @@
 'use client';
 
 import { InView } from 'react-intersection-observer';
-import { Link } from '@nextui-org/link';
-import { Spinner } from '@nextui-org/spinner';
+import { Link } from "@heroui/link";
+import { Spinner } from "@heroui/spinner";
 import Title from '@/components/Post/Title';
 import usePosts from '@/hooks/usePosts';
 import { Issues } from '@/types';

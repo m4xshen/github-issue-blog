@@ -2,14 +2,14 @@
 
 import { useTransition } from 'react';
 import { usePathname } from 'next/navigation';
-import { Avatar } from '@nextui-org/avatar';
-import { Button } from '@nextui-org/button';
+import { Avatar } from "@heroui/avatar";
+import { Button } from "@heroui/button";
 import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from '@nextui-org/dropdown';
+} from "@heroui/dropdown";
 import { logOut, login } from '@/actions/auth';
 import { User } from '@/types';
 import { GitHub } from '../Icons';

@@ -1,4 +1,4 @@
-import { Avatar, Link } from '@nextui-org/react';
+import { Avatar, Link } from "@heroui/react";
 import { getComments } from '@/utils/post';
 import MarkdownWrapper from '../MarkdownWrapper';
 

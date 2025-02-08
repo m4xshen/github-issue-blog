@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Textarea, Input } from '@nextui-org/input';
+import { Textarea, Input } from "@heroui/input";
 import Submit from './Submit';
 
 export default function PostEditor({

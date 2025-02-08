@@ -3,7 +3,7 @@
 import { createComment } from '@/actions/comment';
 import Submit from '@/components/PostEditor/Submit';
 import { User } from '@/types';
-import { Textarea } from '@nextui-org/react';
+import { Textarea } from '@heroui/react';
 import { useState } from 'react';
 
 export default function CommentCreator({
@@ -28,7 +28,6 @@ export default function CommentCreator({
         value={body}
         onValueChange={setBody}
         isDisabled={!user}
-        isInvalid={bodyIsInvalid}
         name="body"
         radius="sm"
         size="lg"

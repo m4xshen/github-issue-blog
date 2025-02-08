@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { Skeleton } from '@nextui-org/react';
+import { Skeleton } from "@heroui/react";
 import { Moon, Sun } from '../Icons';
 
 export default function ThemeSwitcher() {

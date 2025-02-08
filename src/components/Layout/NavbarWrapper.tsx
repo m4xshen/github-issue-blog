@@ -1,10 +1,10 @@
-import { Link } from '@nextui-org/link';
+import { Link } from "@heroui/link";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-} from '@nextui-org/navbar';
+} from "@heroui/navbar";
 import { getUser } from '@/utils/auth';
 import AvatarWrapper from './AvatarWrapper';
 import ThemeSwitcher from './ThemeSwitcher';
