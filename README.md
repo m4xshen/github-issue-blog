@@ -2,13 +2,15 @@
   <h1>GitHub Issue Blog</h1>
 
   Use GitHub issue as your blog.
+  
+![screenshot](https://github.com/user-attachments/assets/4ec02823-dfd4-41d6-aa24-bc37f303cfd1)
 
-  Example Site: https://github-issue-blog.vercel.app
 
-![screenshot](https://github.com/m4xshen/github-issues-blog/assets/74842863/c31a00fc-1878-4a9f-b25a-096c96fe5aa6)
-
+  [🌐 Example Site](https://github-issue-blog.vercel.app)
+  
 [![Playwright Tests](https://github.com/m4xshen/github-issue-blog/actions/workflows/playwright.yml/badge.svg)](https://github.com/m4xshen/github-issue-blog/actions/workflows/playwright.yml)
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=github-issue-blog)
+
 
 </div>
 
@@ -58,44 +60,7 @@ If you plan to deploy your site...
 
 ### Tech Stacks
 
-- Web Framework: [Next.js](https://nextjs.org/) (App Router)
+- Framework: [Next.js](https://nextjs.org/)
 - Language: [TypeScript](https://www.typescriptlang.org/)
 - Styling: [Tailwind CSS](https://tailwindcss.com/)
-- UI: [Next UI](https://nextui.org/)
-
-### Routes
-
-- Home Page: `/`
-- Post Page: `/post/{number}`
-- New Post Page: `/post/new`
-- Edit Post Page: `/post/edit/{number}`
-
-```mermaid
-sequenceDiagram
-    Home Page ->> Post Page: Click Post Title
-    Home Page ->> New Post Page: New Post
-    New Post Page ->> Post Page: Publish
-    Post Page ->> Home Page: Delete
-    Post Page ->> Edit Post Page: Edit
-    Edit Post Page ->> Post Page: Update
-```
-
-### Folder Structure
-
-- `app/`
-  - `page.tsx`: Home Page
-  - `[number]/page.tsx`: Post Page
-  - `edit/[number]/page.tsx`: Edit Post Page
-  - `new/page.tsx`: New Post Page
-  - `auth/callback/route.ts`: route handler for GitHub OAuth flow
-- `utils/`
-  - `post.ts`: fetch posts / post / comments
-  - `auth.ts`: fetch user, OAuth utils
-  - `octokit.ts`: GitHub OAuth App client
-- `actions/`: server actions
-  - `post.ts`: create / update / delete post
-  - `auth.ts`: login, log out
-  - `comment.ts`: create comment
-- `hooks/usePosts.ts`: get posts with infinite scroll
-- `components/`: UI components
-- `tests/`: Playwright tests
+- UI: [HeroUI](https://www.heroui.com/)
