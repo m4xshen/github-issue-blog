@@ -55,3 +55,7 @@ If you plan to deploy your site...
 
 - with Vercel: [follow the docs](https://vercel.com/docs/deployments/overview)
 - by yourself: `pnpm build && pnpm start` and check out http://localhost:3000
+
+## ⭐ Star history
+
+[![Star History Chart](https://app.repohistory.com/api/svg?repo=m4xshen/github-issue-blog&type=Date&theme=dark&transparent=false&color=FCE2C6)](https://repohistory.com)
